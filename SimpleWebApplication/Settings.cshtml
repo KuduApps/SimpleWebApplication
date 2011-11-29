@@ -1,0 +1,43 @@
+﻿@using System.Configuration;
+@using System.Collections;
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>AppSettings</h2>
+        <ul>
+        @foreach (string name in ConfigurationManager.AppSettings)
+        {
+            <li>
+            @name = @ConfigurationManager.AppSettings[name]
+            </li>
+        }
+        </ul>
+
+        <h2>Connection Strings</h2>
+        <ul>
+        @foreach (ConnectionStringSettings settings in ConfigurationManager.ConnectionStrings)
+        {
+            <li>
+            @settings.Name
+            <ul>
+                <li>ConnectionString = @settings.ConnectionString</li>
+                <li>ProviderName = @settings.ProviderName</li>
+            </ul>
+            </li>
+        }
+        </ul>
+
+        <h2>Environment variables</h2>
+        <ul>
+        @foreach (DictionaryEntry entry in Environment.GetEnvironmentVariables())
+        {
+            <li>@entry.Key=@entry.Value</li>
+        }
+        </ul>
+    </div>
+</body>
+</html>
