@@ -62,7 +62,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <None Include="Settings.cshtml" />
+    <Content Include="Settings.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
